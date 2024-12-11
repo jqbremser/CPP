@@ -6,21 +6,24 @@
 #    By: jbremser <jbremser@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 15:37:48 by jbremser          #+#    #+#              #
-#    Updated: 2024/12/11 12:25:00 by jbremser         ###   ########.fr        #
+#    Updated: 2024/12/11 14:02:35 by jbremser         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME		=	megaphone
+NAME		=	Phonebook
 
 FLAGS		=	-Wall -Wextra -Werror -std=c++11
 
-FILES		=	Megaphone.cpp
+FILES		=	Phonebook.cpp \
+				Contact.cpp \
+				main.cpp
 
 SRCDIR		=	srcs
 OBJDIR		=	objs
 
-HEADER		=	header.hpp
+HEADER		=	Contact.hpp \
+				PhoneBook.hpp
 
 SRCS		=	$(addprefix $(SRCDIR)/, $(FILES))
 

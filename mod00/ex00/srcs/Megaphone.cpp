@@ -6,7 +6,7 @@
 /*   By: jbremser <jbremser@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:37:27 by jbremser          #+#    #+#             */
-/*   Updated: 2024/11/12 17:07:01 by jbremser         ###   ########.fr       */
+/*   Updated: 2024/12/10 16:09:29 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int main(int argc, char **argv)
 {
 	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE */n";
-	if (argc > 1)
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
+	if (argc > 1) // change to else
 	{
 		for (int j = 1; j < argc; j++)
 		{
@@ -26,9 +26,8 @@ int main(int argc, char **argv)
 					argv[j][i] = std::toupper(argv[j][i]);
 			}
 			std::cout << argv[j];
-			if (j < argc - 1)
-				std::cout << " ";
 		}
+		std::cout << std::endl;
 	}
 	return (0);
 }
