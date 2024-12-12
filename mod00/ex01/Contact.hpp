@@ -6,7 +6,7 @@
 /*   By: jbremser <jbremser@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:08:11 by jbremser          #+#    #+#             */
-/*   Updated: 2024/12/11 13:45:15 by jbremser         ###   ########.fr       */
+/*   Updated: 2024/12/12 17:32:27 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class	Contact
 	std::string getDarkestSecret() const;
 
 	void introduce() const;
-	bool isEmpty() const;
+	// bool isEmpty() const;
 
 	private:
 	std::string	firstName;

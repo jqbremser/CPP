@@ -6,7 +6,7 @@
 /*   By: jbremser <jbremser@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:36:50 by jbremser          #+#    #+#             */
-/*   Updated: 2024/12/11 14:39:49 by jbremser         ###   ########.fr       */
+/*   Updated: 2024/12/12 17:15:54 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,14 @@ std::string Contact::getNumber() const {return phoneNumber;}
 std::string Contact::getDarkestSecret() const {return darkestSecret;}
 
 void Contact::introduce() const{
-	std::cout << "Hi, my name is " << firstName << "" << lastName << " but you can call me " << nickname << " and you can reach me at " << phoneNumber << ". I haven'd told anyone this but "
+	std::cout << "Hi, my name is " << firstName << " " << lastName << " but you can call me " << nickname << " and you can reach me at " << phoneNumber << ". I haven'd told anyone this but "
 	<< darkestSecret << " OKAY BYE." << std::endl;
 };
 
-bool Contact::isEmpty() const {
-	return firstName.empty() && lastName.empty() && nickname.empty() && phoneNumber.empty() && darkestSecret.empty();
-}
+// bool Contact::isEmpty() const {
+// 	return firstName.empty() && lastName.empty() && nickname.empty() && phoneNumber.empty() && darkestSecret.empty();
+// }
+
+// bool Contact::isEmpty(std::string& info) const {
+// 	return info.empty();
+// }
