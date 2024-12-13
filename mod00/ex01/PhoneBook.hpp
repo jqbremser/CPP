@@ -6,7 +6,7 @@
 /*   By: jbremser <jbremser@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:02:15 by jbremser          #+#    #+#             */
-/*   Updated: 2024/12/12 18:18:32 by jbremser         ###   ########.fr       */
+/*   Updated: 2024/12/13 15:28:46 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <iostream>
 #include <cctype>
 #include <cstring>
-#include <algorithm> //for std::transform
 #include <iomanip> //for setw
 
 
@@ -27,11 +26,13 @@ class	PhoneBook
 	public:
 	PhoneBook();
 	
-	void setContact(); //setter
-	void getContacts() const; //getter
-	void getContactDetails(int index); //get contacts with index number
-	void setInfo(Contact& contact, std::string input, std::string attrContact);
+	void	setContact(); //setter
+	void	setInfo(Contact& contact, std::string input, std::string attrContact);
 
+	void	getContacts() const; //getter
+	void	getContactDetails(int index); //get contacts with index number
+	int		getTotalContacts() const;
+	
 	private:
 		static const int MAX_CONTACTS = 8;
 		Contact contacts[MAX_CONTACTS];

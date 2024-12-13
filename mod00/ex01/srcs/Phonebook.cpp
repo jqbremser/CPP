@@ -6,7 +6,7 @@
 /*   By: jbremser <jbremser@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:12:49 by jbremser          #+#    #+#             */
-/*   Updated: 2024/12/12 18:18:34 by jbremser         ###   ########.fr       */
+/*   Updated: 2024/12/13 15:28:54 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,8 @@
 PhoneBook::PhoneBook() : currentIndex(0), totalContacts(0) {} // initialization list
 
 //setter function declaration
-void PhoneBook::setInfo(Contact& contact, std::string input, std::string attrContact){
-	std::cout << "Enter your " << attrContact << ": ";
-	std::getline(std::cin, input);
-	if (std::cin.eof()){
-		std::cout << "Time to Exit!" << std::endl;
-		exit(0);
-	}
-	while (input.empty()){
-		std::cout << attrContact << " was incorrectly inputted: " << input << std::endl << "Try again please: ";
-		std::getline(std::cin, input);
-		if (std::cin.eof()){
-			std::cout << "Time to Exit!" << std::endl;
-			exit(0);
-		}
-	}
-	if (attrContact == "first name")
-		contact.setFirstName(input);
-	if (attrContact == "last name")
-		contact.setLastName(input);
-	if (attrContact == "nickname")
-		contact.setNickname(input);
-	if (attrContact == "darkest secret")
-		contact.setDarkestSecret(input);
-}
 
-void PhoneBook::setContact(){
+void PhoneBook::setContact() {
 	std::string input;
 	Contact contact;
 	
@@ -74,10 +50,33 @@ void PhoneBook::setContact(){
 	if (totalContacts < MAX_CONTACTS) {
         totalContacts++;
     }
-	// this->currentIndex++;
-	// this->totalContacts++;
-	contact.introduce();
 }
+
+void PhoneBook::setInfo(Contact& contact, std::string input, std::string attrContact){
+	std::cout << "Enter your " << attrContact << ": ";
+	std::getline(std::cin, input);
+	if (std::cin.eof()){
+		std::cout << "Time to Exit!" << std::endl;
+		exit(0);
+	}
+	while (input.empty()){
+		std::cout << attrContact << " was incorrectly inputted: " << input << std::endl << "Try again please: ";
+		std::getline(std::cin, input);
+		if (std::cin.eof()){
+			std::cout << "Time to Exit!" << std::endl;
+			exit(0);
+		}
+	}
+	if (attrContact == "first name")
+		contact.setFirstName(input);
+	if (attrContact == "last name")
+		contact.setLastName(input);
+	if (attrContact == "nickname")
+		contact.setNickname(input);
+	if (attrContact == "darkest secret")
+		contact.setDarkestSecret(input);
+}
+
 
 //getter function declaration
 void PhoneBook::getContacts() const{
@@ -93,38 +92,15 @@ void PhoneBook::getContacts() const{
     }
 }
 
-//getter function declaration, pulls specific details based on given index
-void PhoneBook::getContactDetails(int index) {
-	this->currentIndex = index;
-	
+int		PhoneBook::getTotalContacts() const{
+	if (totalContacts == 0)
+		return (-1);
+	else
+		return (totalContacts - 1);
 }
-	// std::cout << "Enter your last name: ";
-	// std::getline(std::cin, input);
-	// if (std::cin.eof()){
-	// 	std::cout << "Time to Exit!" << std::endl;
-	// 	exit(0);
-	// }
-	// contact.setLastName(input);
 
-	// std::cout << "Enter your nickname: ";
-	// std::getline(std::cin, input);
-	// if (std::cin.eof()){
-	// 	std::cout << "Time to Exit!" << std::endl;
-	// 	exit(0);
-	// }
-	// contact.setNickname(input);
-	
 
-	
-	// std::cout << "Enter your darkest secret: ";
-	// std::getline(std::cin, input);
-	// if (std::cin.eof()){
-	// 	std::cout << "Time to Exit!" << std::endl;
-	// 	exit(0);
-	// }
-	// contact.setDarkestSecret(input);
-
-	// if (contact.isEmpty()){
-	// 	std::cout << "Please be sure to fill in all appropriate fields!" << std::endl;
-	// 	return ;
-	// }
+//getter function declaration, pulls specific details based on given index
+void PhoneBook::getContactDetails(int input) {
+	contacts[input].introduce();
+	}

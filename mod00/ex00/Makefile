@@ -6,7 +6,7 @@
 #    By: jbremser <jbremser@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 15:37:48 by jbremser          #+#    #+#              #
-#    Updated: 2024/12/11 12:25:00 by jbremser         ###   ########.fr        #
+#    Updated: 2024/12/13 15:07:30 by jbremser         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ $(NAME):		$(OBJS)
 
 clean:
 				@rm -rf $(OBJDIR)
-				@echo "$(ANSI_RED)Objects and LIB_FT Cleaned$(ANSI_RESET)"
+				@echo "$(ANSI_RED)Objects$(ANSI_RESET)"
 
 fclean:			clean
 				@rm -rf $(NAME)
