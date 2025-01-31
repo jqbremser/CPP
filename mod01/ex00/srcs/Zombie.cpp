@@ -6,15 +6,16 @@
 /*   By: jbremser <jbremser@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:40:09 by jbremser          #+#    #+#             */
-/*   Updated: 2024/12/19 16:43:33 by jbremser         ###   ########.fr       */
+/*   Updated: 2025/01/31 18:23:35 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Zombie.hpp"
 
 	//Basic constructor declaration/init list
-	Zombie::Zombie() : _name("Joe") {}
+	Zombie::Zombie() : _name("Anon") {}
 	Zombie::Zombie(std::string name) : _name(name) {}
+	Zombie::~Zombie() {std::cout << this->_name << " must be destroyed. Throw him into the fire!\n";}
 
 
 	//SETTER function declarations
@@ -29,13 +30,10 @@
 
 	Zombie* Zombie::newZombie(std::string name){
 		Zombie *zombie = new Zombie(name);
-		zombie->setName(name);
-		// zombie->announce();
 		return zombie;
 	}
 
 	void Zombie::randomChump( std::string name){
-		Zombie zombie;
-		zombie.setName(name);
+		Zombie zombie(name);
 		zombie.announce();
 	}
