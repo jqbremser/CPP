@@ -6,7 +6,7 @@
 #    By: jbremser <jbremser@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/19 15:37:28 by jbremser          #+#    #+#              #
-#    Updated: 2025/01/31 17:40:01 by jbremser         ###   ########.fr        #
+#    Updated: 2025/02/04 15:13:35 by jbremser         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,7 @@ NAME		=	Zombie
 FLAGS		=	-Wall -Wextra -Werror -std=c++11
 
 FILES		=	main.cpp \
-				Zombie.cpp \
-				# newZombie.cpp \
-				# randomChump.cpp 
+				Zombie.cpp 
 
 SRCDIR		=	srcs
 OBJDIR		=	objs
