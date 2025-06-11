@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   FileReplacer.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbremser <jbremser@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/04 15:34:26 by jbremser          #+#    #+#             */
-/*   Updated: 2025/06/11 12:36:25 by jbremser         ###   ########.fr       */
+/*   Created: 2025/06/11 15:38:14 by jbremser          #+#    #+#             */
+/*   Updated: 2025/06/11 15:48:57 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-#define HUMANA_HPP
+#ifndef FILEREPLACER_HPP
+#define FILEREPLACER_HPP
 
 #include <string>
-#include "Weapon.hpp"
+#include <iostream>
+#include <fstream>
+#include <sys/stat.h>
 
-class HumanA
-{
+class FileReplacer {
 	public:
-		HumanA(const std::string &name, Weapon &weapon);
-		void attack() const; //print message for attack
-	
+		FileReplacer(const std::string &filename, const std::string &s1, const std::string &s2);
+		bool replaceInFile();
+
 	private:
-		std::string name;
-		Weapon &weapon; // reference to weapon which is ALWAYS armed
-	
-	
-};
+		std::string filename;
+		std::string s1;
+		std::string	s2;
 
+		std::string replaceString(const std::string &line) const;
+	};
+	
 #endif
-//getters
-// const std::string &getName() const:
-// const std::string &getWeapon() const:
-
-
-//methods/functions:
-// void HumanA::attack() const;

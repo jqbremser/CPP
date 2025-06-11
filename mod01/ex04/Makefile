@@ -5,26 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jbremser <jbremser@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/02/04 15:31:04 by jbremser          #+#    #+#              #
-#    Updated: 2025/06/11 15:38:26 by jbremser         ###   ########.fr        #
+#    Created: 2025/06/11 15:36:43 by jbremser          #+#    #+#              #
+#    Updated: 2025/06/11 15:41:05 by jbremser         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	bob
+NAME		=	replicator
 
 FLAGS		=	-Wall -Wextra -Werror -std=c++11
 
 FILES		=	main.cpp \
-				Weapon.cpp \
-				HumanA.cpp \
-				HumanB.cpp
+				FileReplacer.cpp
 
 SRCDIR		=	srcs
 OBJDIR		=	objs
 
-HEADER		=	HumanA.hpp \
-				HumanB.hpp \
-				Weapon.hpp
+HEADER		=	FileReplacer.hpp
 
 SRCS		=	$(addprefix $(SRCDIR)/, $(FILES))
 

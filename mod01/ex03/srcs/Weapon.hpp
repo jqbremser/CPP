@@ -6,20 +6,19 @@
 /*   By: jbremser <jbremser@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 15:37:40 by jbremser          #+#    #+#             */
-/*   Updated: 2025/02/04 16:04:41 by jbremser         ###   ########.fr       */
+/*   Updated: 2025/06/11 12:26:44 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WEAPON_HPP
 #define WEAPON_HPP
 
-#include <iostream>
-#include "HumanA.hpp"
+#include <string>
 
 class Weapon
 {
 	public:
-	Weapon(const std::string &_type); //constructor with initial type given as para
+	Weapon(const std::string &type); //constructor with initial type given as para
 	// Weapon(std::string type);
 	// ~Weapon();
 
@@ -31,7 +30,7 @@ class Weapon
 
 
 	private:
-	std::string _type;
+	std::string type;
 };
 
 

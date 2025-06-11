@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbremser <jbremser@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/04 15:49:29 by jbremser          #+#    #+#             */
-/*   Updated: 2025/06/11 12:33:01 by jbremser         ###   ########.fr       */
+/*   Created: 2025/06/11 15:11:53 by jbremser          #+#    #+#             */
+/*   Updated: 2025/06/11 15:31:12 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "HumanB.hpp"
+#include <iostream>
 
-Weapon::Weapon(const std::string &type) : type(type) {}
+HumanB::HumanB(const std::string &name) : name(name), weapon(nullptr) {}
 
-const std::string &Weapon::getType() const{
-	return (type);
+void HumanB::setWeapon(Weapon &weapon) {
+	this->weapon = &weapon;
 }
 
-void Weapon::setType(const std::string &newType){
-	type = newType;
+void HumanB::attack() const {
+	if(weapon){
+		std::cout << name << " attacks with their " << weapon->getType() << "\n";
+	}
+	else {
+		std::cout << name << " has no weapon to attack with " << "\n";	
+	}
 }
