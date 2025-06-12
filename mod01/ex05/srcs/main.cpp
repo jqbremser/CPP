@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbremser <jbremser@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/11 15:06:42 by jbremser          #+#    #+#             */
-/*   Updated: 2025/06/12 13:27:27 by jbremser         ###   ########.fr       */
+/*   Created: 2025/06/12 17:13:35 by jbremser          #+#    #+#             */
+/*   Updated: 2025/06/12 17:20:05 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	HUMANB_HPP
-#define HUMANB_HPP
+#include "Harl.hpp"
+#include <iostream>
 
-#include <string>
-#include "Weapon.hpp"
+int main() {
+    Harl harl;
 
-class HumanB
-{
-	public:
-		HumanB(const std::string &name);
-		~HumanB();
-		void setWeapon(Weapon &weapon);
-		void attack() const; //print message for attack
+    std::cout << "Testing Harl's complaints at different levels:" << std::endl;
+    harl.complain("DEBUG");
+    harl.complain("INFO");
+    harl.complain("WARNING");
+    harl.complain("ERROR");
+    harl.complain("UNKNOWN");  // Testing unknown level
 
-
-	private:
-		std::string name; //name of humanb
-		Weapon *weapon;
-};
-
-#endif
+    return 0;
+}

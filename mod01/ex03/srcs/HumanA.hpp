@@ -6,7 +6,7 @@
 /*   By: jbremser <jbremser@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 15:34:26 by jbremser          #+#    #+#             */
-/*   Updated: 2025/06/11 12:36:25 by jbremser         ###   ########.fr       */
+/*   Updated: 2025/06/12 13:28:39 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class HumanA
 {
 	public:
 		HumanA(const std::string &name, Weapon &weapon);
+		~HumanA();
 		void attack() const; //print message for attack
 	
 	private:
